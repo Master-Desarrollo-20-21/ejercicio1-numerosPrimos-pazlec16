@@ -24,14 +24,14 @@ public class mainClass {
 		int countPrimes = 0;
 		int sumPrimes = 0;
 		int  numberAnalized = 0;
-		int ancestry = 0; 
-		while (ancestry!=1){
+		int x = 0; 
+		while (x!=1){
 			if (isPrimeNumber(numberAnalized)){
 				sumPrimes = sumPrimes + numberAnalized ;
 				countPrimes ++;
 			}
 			if (countPrimes==50){
-				ancestry = 1;
+				x = 1;
 			}else{
 				numberAnalized += 1;
 			}
