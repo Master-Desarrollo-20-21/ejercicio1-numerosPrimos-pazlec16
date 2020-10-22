@@ -24,14 +24,14 @@ public class mainClass {
 		int countPrimes = 0;
 		int sumPrimes = 0;
 		int  numberAnalized = 0;
-		int x = 0; 
-		while (x!=1){
+		int flag = 0; 
+		while (flag!=1){
 			if (isPrimeNumber(numberAnalized)){
 				sumPrimes = sumPrimes + numberAnalized ;
 				countPrimes ++;
 			}
 			if (countPrimes==50){
-				x = 1;
+				flag = 1;
 			}else{
 				numberAnalized += 1;
 			}
@@ -40,26 +40,17 @@ public class mainClass {
 	}
 	
 	public static boolean isPrimeNumber(int numberAnalized){
-		boolean ret = false;
-		int scrapCounter = 0;
-		int i = 0;
-		if (numberAnalized <=1){
-			ret = false;
-		}else if (numberAnalized == 2){
-			ret = true;
-		}else{ 
-			for (i=2 ; i<= numberAnalized ; i++ ){
-				if (numberAnalized%i==0){
-					scrapCounter ++;
-				}
-			}
-			if (scrapCounter>1){
-				ret = false;
-			}else{
-				ret = true;
-			}
+		int divisor = 2;
+		boolean isPrime = true;
+		
+		if (numberAnalized < divisor) return false;
+		while (isPrime && divisor < numberAnalized){
+			if (numberAnalized % divisor == 0)
+			  isPrime = false;
+			divisor++;
 		}
-		return ret;
+		return isPrime;
 	}
+	
 }
 
